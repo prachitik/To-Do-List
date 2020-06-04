@@ -1,2 +1,2 @@
 # To-Do-List
-Create To-Do-List using HTML and javascript
+Create To-Do-List using HTML, CSS and javascript
