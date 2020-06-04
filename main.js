@@ -7,6 +7,9 @@ let myTodos = document.getElementById("myTodos");
 let myTodosList = [];
 let id = 0;
 let restoredList = localStorage.getItem("todos");
+let activeElement = "";
+let eId = 0;
+let edit = false;
 if( restoredList){
     myTodosList = JSON.parse(restoredList);
     loadMyTodos(myTodosList);
@@ -19,7 +22,7 @@ else{
 
 function loadMyTodos(arr){
     arr.forEach((item) => {
-        addItem(item.name, item.id,item.remove); 
+        addItem(item.name, item.id,item.edit, item.remove); 
       })
 }
 
@@ -28,6 +31,7 @@ addButton.addEventListener('click',function(event){
         addItem(input.value, id, false); 
         myTodosList.push({name:input.value,
         id : id,
+        edit : edit,
         remove : false});
     } 
     else{
@@ -38,7 +42,7 @@ addButton.addEventListener('click',function(event){
     id++;
 })
 
-function addItem(item, id,del){
+function addItem(item, id,edit,del){
     if(del){
         return;
     }
@@ -57,14 +61,26 @@ clearButton.addEventListener('click',function(event){
 })
 
 saveButton.addEventListener('click',function(event){
-    //myTodos = document.getElementById("myTodos");
+    if(edit){
+        myTodosList[eId].name = activeElement.value;
+        edit = false;
 
+    }
+    //myTodos = document.getElementById("myTodos");
+    activeElement.disabled = !activeElement.disabled;
+    localStorage.setItem("todos", JSON.stringify(myTodosList));
+    //alert(activeElement);
+    
 })
 
 function editTask(element){
-    /*element.previousElementSibling.disabled = !element.previousElementSibling.disabled;
-    myTodosList[element.id].name = element.previousElementSibling.value;
-    localStorage.setItem("todos", JSON.stringify(myTodosList));*/
+    element.previousElementSibling.disabled = !element.previousElementSibling.disabled;
+    activeElement = element.previousElementSibling;
+    edit = true;
+    //myTodosList[name] = element.previousElementSibling.value;
+    myTodosList[element.id].edit = true;
+    eId = element.id;
+    /*localStorage.setItem("todos", JSON.stringify(myTodosList));*/
 }
 
 
