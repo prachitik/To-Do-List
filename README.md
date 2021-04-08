@@ -2,7 +2,7 @@
 A simple To-Do-List application to keep you organized. 
 
 
-## Introduction
+### Introduction
 The goal is to provide a to-do list application which allows one to add, edit, delete and save tasks. All tasks will be saved so even when user refreshes the page, user won't loose the list.
 
 ### Technologies: HTML, CSS, Javascript
