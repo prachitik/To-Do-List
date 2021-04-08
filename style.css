@@ -1,4 +1,4 @@
-body{
+body,html{
     margin: 0;
     padding: 0;
     background-color: honeydew;
@@ -11,11 +11,13 @@ body{
     align-items: center;
     text-align: center;
     justify-content: center;
-    margin: 15px auto; /* 0 for top-bottom and auto for left-right align centrallly within parent container*/
+    margin: 25px auto; /* 0 for top-bottom and auto for left-right align centrallly within parent container*/
     padding: 10px;
-    width:480px;
+    /*width:480px;*/
+    width: 35%;
+    height: 90%;
     border: 2px solid black;
-    background-color:darkcyan;
+    background-color:#00788b29;
 }
 
 .header{
@@ -58,12 +60,12 @@ body{
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
 }
-.saveNEdit{
+.saveNClear{
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 344px;
 }
-.saveNEdit #saveButton, .saveNEdit #clearButton{
+.saveNClear #saveButton, .saveNClear #clearButton{
     height: 35px;   
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
