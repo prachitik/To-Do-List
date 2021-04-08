@@ -1,2 +1,9 @@
 # To-Do-List
-Create To-Do-List using HTML, CSS and javascript
+A simple To-Do-List application to keep you organized. 
+
+
+Introduction
+
+Technologies
+
+Run
